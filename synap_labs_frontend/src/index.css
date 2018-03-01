@@ -1,5 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body, .root {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  line-height: 1.5;
+}
+body, .app {
+  background: #f5f5f5;
+}
+
+
+/* MESSAGES LIST  */
+.list-messages{
+  padding-top: 60px;
+}
+
+.list-contacts-top{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #d5d8df
 }

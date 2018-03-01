@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import ListContacts from './ListContacts';
-import logo from './logo.svg';
-import './App.css';
+import * as messagesAPI from './utils/messagesApi'
+
 
 class App extends Component {
 
 
   state = {
-    contacts: []
+    messages: []
   }
+
+  componentDidMount(){
+    messagesAPI.getAll().then((messages) => {
+      this.setState({ messages : messages })
+    })
+  }
+
+
 
   render() {
     return (
       <div className="App">
-        <ListContacts />
+        <ListContacts messages={this.state.messages} />
       </div>
     );
   }
