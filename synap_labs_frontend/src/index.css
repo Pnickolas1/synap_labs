@@ -27,5 +27,75 @@ body, .app {
   position: fixed;
   width: 100%;
   top: 0;
-  border-bottom: 1px solid #d5d8df
+  border-bottom: 1px solid #d5d8df;
+  display: flex;
+}
+
+.search-messages{
+  width: 100%;
+  padding: 20px 20px 20px 60px;
+  background-image: url('./icons/search.svg');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1.2em;
+  font-size: 1.2em;
+  border: 0;
+  outline: none;
+}
+
+.message-list{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.message-list-item{
+  padding: 20px;
+  background: white;
+  display: flex;
+}
+
+@media (min-width: 600px) {
+  .message-list-item {
+    margin: 20px;
+    border: 1px solid #d5d8df;
+    border-radius: 4px;
+  }
+}
+
+.message-details {
+  padding-left: 20px;
+  border-left: 5px solid #eee;
+
+  flex: 1;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-details p {
+  margin: 0;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-remove {
+  padding-left: 20px;
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url('./icons/cancel.svg');
+  background-size: 100% 100%;
+  border: 0;
+  color: black;
+  font-size: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
 }

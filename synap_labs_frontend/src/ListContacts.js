@@ -23,7 +23,7 @@ class ListContacts extends Component{
           <input 
             className='search-messages'
             type='text'
-            placeholder='search messages'
+            placeholder='search messages from'
           />
         </div>
 
