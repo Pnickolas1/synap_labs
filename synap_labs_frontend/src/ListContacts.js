@@ -10,7 +10,7 @@ class ListContacts extends Component{
   }
 
   state = {
-    query : ''
+    query: ''
   }
 
   updateQuery = (query) => {
@@ -18,12 +18,13 @@ class ListContacts extends Component{
   }
 
   clearQuery = () => {
-    this.setState({ query: '' })
+    this.setState({
+      query: ''
+    })
   }
 
   render(){
     let showingMessages;
-    showingMessages = this.props.messages;
     console.log(this.props)
 
     if(this.state.query){
@@ -43,6 +44,7 @@ class ListContacts extends Component{
             className='search-messages'
             type='text'
             placeholder='From:'
+            value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
         </div>
@@ -50,8 +52,8 @@ class ListContacts extends Component{
       
         {showingMessages.length !== this.props.messages.length && (
           <div className='showing-messages'>
-            <span>Showing {showingMessages.length} of {this.props.messages.length} Messages </span>
-            <button onClick={this.clearQuery}> Show All </button>
+            <span>{`Showing ${showingMessages.length} of ${this.props.messages.length} Messages`}</span>
+            <button onClick={this.clearQuery}>Show All</button>            
           </div>
         )} 
 
@@ -64,13 +66,9 @@ class ListContacts extends Component{
               <p>To: {message.to}</p>
               <p>Subject: {message.subject}</p>
             </div>
-            <button onClick={() => {}} className='message-remove'>
-              remove
-            </button>
           </li>
         ))}
       </ol>
-
       </div>
     )
   }
