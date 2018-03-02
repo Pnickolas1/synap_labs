@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
+import escapeRegExp from 'escape-string-regexp';
 
 
 
 class ListContacts extends Component{
   constructor(props){
     super(props)
+    console.log(this.props)
   }
 
   state = {
     query : ''
   }
 
+  updateQuery = (query) => {
+    this.setState({ query: query.trim() })
+  }
+
+  clearQuery = () => {
+    this.setState({ query: '' })
+  }
+
   render(){
     let showingMessages;
-
     showingMessages = this.props.messages;
-    console.log(showingMessages);
+    console.log(this.props)
+
+    if(this.state.query){
+      const match = new RegExp(escapeRegExp(this.state.query), 'i')
+      showingMessages = this.props.messages.filter((message) => 
+        match.test(message.from)
+      )
+    } else {
+      showingMessages = this.props.messages;
+    }
+
 
     return(
       <div className='list-messages'>
@@ -23,10 +42,18 @@ class ListContacts extends Component{
           <input 
             className='search-messages'
             type='text'
-            placeholder='search messages from'
+            placeholder='From:'
+            onChange={(event) => this.updateQuery(event.target.value)}
           />
         </div>
 
+        {/* {showingMessages.length !== this.props.messages.length (
+          <div className='showing-messages'>
+            <span>Now Showing {showingMessages.length} of {this.props.messages.length} total </span>
+            <button onClick={() => this.clearQuery}>Show All</button>
+          </div>
+        )} 
+ */}
 
       <ol className='message-list'>
         {showingMessages.map(message => (
