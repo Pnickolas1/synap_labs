@@ -47,13 +47,14 @@ class ListContacts extends Component{
           />
         </div>
 
-        {/* {showingMessages.length !== this.props.messages.length (
+      
+        {showingMessages.length !== this.props.messages.length && (
           <div className='showing-messages'>
-            <span>Now Showing {showingMessages.length} of {this.props.messages.length} total </span>
-            <button onClick={() => this.clearQuery}>Show All</button>
+            <span>Showing {showingMessages.length} of {this.props.messages.length} Messages </span>
+            <button onClick={this.clearQuery}> Show All </button>
           </div>
         )} 
- */}
+
 
       <ol className='message-list'>
         {showingMessages.map(message => (

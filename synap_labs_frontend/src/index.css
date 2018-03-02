@@ -17,11 +17,43 @@ body, .app {
   background: #f5f5f5;
 }
 
+.showing-messages {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
 
 /* MESSAGES LIST  */
-.list-messages{
+.list-messages {
   padding-top: 60px;
 }
+
+.showing-messages{
+  color: red;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.message-remove{
+  padding-left: 20px;
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url('./icons/cancel.svg');
+  background-size: 100% 100%;
+  border: 0;
+  color: black;
+  font-size: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+
+
 
 .list-contacts-top{
   position: fixed;
