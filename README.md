@@ -7,7 +7,7 @@ synap labs coding assessment
  2. cd into synap_labs_frontend
  3. `npm install`
  4. `npm start`
- 5. ...On to the next round of interview 👍🏽
+ 5. ...On to the next round of interviews 👍🏽
 
 
 
